@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ahmad Mahmoud — Software Engineer</title>
+<meta name="description" content="Ahmad Mahmoud is a software engineer in Toronto who designs, builds, and ships production platforms end-to-end — from React frontends to Kubernetes infrastructure.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="logo"><span>A</span>hmad <span>M</span>ahmoud</a>
+    <div class="nav-links">
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="wrap">
+    <div class="eyebrow"><span class="dot"></span> in production — toronto, canada</div>
+    <h1>I build platforms that <em>ship</em> — frontend to Kubernetes.</h1>
+    <p class="hero-sub">
+      Software engineer and final-year Software Engineering student at York University.
+      Most recently the <strong>sole developer of a production platform at TELUS</strong> serving
+      215 team members across the CIO organization — designed, built, and deployed end-to-end.
+    </p>
+
+    <div class="rollout" aria-hidden="true">
+      <div class="rollout-label mono">
+        <span>rollout/ahmad-mahmoud → production</span>
+        <span class="pct" id="pct">0%</span>
+      </div>
+      <div class="rollout-track"><div class="rollout-fill" id="fill"></div></div>
+      <div class="rollout-stages" id="stages">
+        <span>canary 25</span><span>50</span><span>75</span><span>stable 100</span>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#projects">View my work</a>
+      <a class="btn btn-ghost" href="mailto:ahmad.shraim24@gmail.com">Get in touch</a>
+    </div>
+  </div>
+</header>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">release log</span>
+      <h2>Experience</h2>
+    </div>
+
+    <article class="release reveal">
+      <div class="release-meta">
+        <span class="ver">current</span><br>
+        Jan 2026 — Aug 2026<br>Toronto, ON
+      </div>
+      <div>
+        <h3>TELUS — CIO Product Operations</h3>
+        <div class="role">Software Engineer Co-op</div>
+        <ul>
+          <li><strong>Sole developer of ProductOps</strong>, a production web platform (TypeScript, Next.js, React) serving 215 TELUS team members — designed, built, and deployed end-to-end to Kubernetes (GKE) with automated canary deployments. Still in active production use.</li>
+          <li>Designed a <strong>BigQuery data layer</strong> spanning 12 domains, 48 products, and 4,200+ mapped applications, secured by a four-tier RBAC system with server-side authorization guards.</li>
+          <li>Published a <strong>versioned REST API</strong> (OpenAPI 3, OAuth2) to the enterprise API marketplace for governed cross-team consumption of taxonomy data.</li>
+          <li>Built <strong>executive analytics dashboards used directly by VPs</strong>, a grounded AI assistant (LLM over live BigQuery data with JSON-constrained output), and a usage-analytics pipeline tracking DAU/WAU/MAU.</li>
+          <li>Owned CI/CD and cloud infrastructure (GitHub Actions, Workload Identity Federation, Terraform); <strong>remediated a HIGH-severity security finding</strong> by decommissioning an unauthenticated public service.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release reveal">
+      <div class="release-meta">
+        Sep 2025 — Dec 2025<br>Toronto, ON
+      </div>
+      <div>
+        <h3>Royal Bank of Canada — Global Networking</h3>
+        <div class="role">Technical Systems Analyst Co-op</div>
+        <ul>
+          <li>Helped maintain <strong>99.9%+ uptime</strong> of global network infrastructure serving 19M+ clients across 30+ countries; analyzed telemetry from 1,000+ devices to drive a 25% reduction in mean incident resolution time.</li>
+          <li>Automated 30+ recurring operational workflows with <strong>Python and Bash</strong>, cutting manual workload by 40% for a 15-person engineering team.</li>
+          <li>Built network automation apps in NetBrain to audit device configurations across multi-vendor devices, parsing CLI output with custom templates and generating CSV compliance reports.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release reveal">
+      <div class="release-meta">
+        Aug 2023 — Aug 2025<br>Toronto, ON
+      </div>
+      <div>
+        <h3>York University — Athletics &amp; Recreation</h3>
+        <div class="role">Operations Representative Team Lead</div>
+        <ul>
+          <li>Led a team of <strong>45 staff</strong> serving 5,000+ weekly visitors; built training materials that cut new-hire ramp-up time by 20%.</li>
+        </ul>
+      </div>
+    </article>
+
+    <div class="metrics reveal">
+      <div class="metric"><div class="num">215</div><div class="lbl">users on a platform I built solo</div></div>
+      <div class="metric"><div class="num">4,200+</div><div class="lbl">applications mapped in BigQuery</div></div>
+      <div class="metric"><div class="num">99.9%</div><div class="lbl">uptime across global infrastructure</div></div>
+      <div class="metric"><div class="num">40%</div><div class="lbl">manual workload automated away</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">selected builds</span>
+      <h2>Projects</h2>
+    </div>
+    <div class="projects">
+      <div class="card reveal">
+        <div class="stack"><span>Python</span><span>PySpark</span><span>MLlib</span><span>Distributed Systems</span></div>
+        <h3>Customer Intelligence Platform</h3>
+        <p>Distributed big-data pipeline processing 50,000+ transactions across 10,000+ portfolios for customer analytics at scale.</p>
+        <div class="hl">3.2× model accuracy lift — O(n²) → O(n log n)</div>
+      </div>
+      <div class="card reveal">
+        <div class="stack"><span>Python</span><span>scikit-learn</span><span>Networking</span><span>Security</span></div>
+        <h3>Network Anomaly Detection</h3>
+        <p>Real-time ML system capturing and classifying live TCP/IP traffic with Isolation Forest to flag malicious patterns for cybersecurity use.</p>
+        <div class="hl">Real-time packet capture + classification</div>
+      </div>
+      <div class="card reveal">
+        <div class="stack"><span>Next.js</span><span>Node.js</span><span>MongoDB</span><span>Prisma</span><span>AWS</span></div>
+        <h3>YUM E-Commerce Platform</h3>
+        <p>Full-stack e-commerce system deployed on AWS EC2 with NextAuth.js + JWT authentication and a responsive Tailwind CSS UI.</p>
+        <div class="hl">Designed to scale to 50K+ users</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">toolchain</span>
+      <h2>Skills</h2>
+    </div>
+    <div class="skills">
+      <div class="skill-group reveal">
+        <h3>Languages</h3>
+        <div class="chips">
+          <span class="chip">Python</span><span class="chip">TypeScript / JavaScript</span><span class="chip">Java</span>
+          <span class="chip">C</span><span class="chip">SQL</span><span class="chip">Bash</span><span class="chip">HTML / CSS</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <h3>Software Development</h3>
+        <div class="chips">
+          <span class="chip">React</span><span class="chip">Next.js</span><span class="chip">Node.js</span>
+          <span class="chip">REST API design</span><span class="chip">OpenAPI 3</span><span class="chip">OAuth2</span>
+          <span class="chip">JWT</span><span class="chip">RBAC</span><span class="chip">Linux / Unix</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <h3>Infrastructure &amp; Cloud</h3>
+        <div class="chips">
+          <span class="chip">GCP</span><span class="chip">Kubernetes / GKE</span><span class="chip">Cloud Run</span>
+          <span class="chip">BigQuery</span><span class="chip">Docker</span><span class="chip">Helm</span>
+          <span class="chip">Terraform</span><span class="chip">GitHub Actions</span><span class="chip">Canary deployments</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <h3>Data &amp; AI / ML</h3>
+        <div class="chips">
+          <span class="chip">Advanced SQL</span><span class="chip">ETL</span><span class="chip">PySpark</span>
+          <span class="chip">MLlib</span><span class="chip">scikit-learn</span><span class="chip">LLM integration</span>
+          <span class="chip">Grounded generation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">readme</span>
+      <h2>About</h2>
+    </div>
+    <div class="about-grid">
+      <div class="reveal">
+        <p>I'm a software engineer who likes owning things end-to-end. At TELUS I was handed a blank repo and shipped a production platform — the React frontend, the BigQuery data layer, the Kubernetes deployment, the CI/CD pipeline, the security posture — that the organization still runs on today.</p>
+        <p>Before that I worked on the infrastructure keeping <strong>19 million banking clients</strong> online at RBC, which taught me what production reliability actually costs and how to automate the toil around it.</p>
+        <p>I'm finishing my degree at York University with a specialization in Data Science, so I'm equally at home designing an API contract, tuning a SQL query, or wiring an LLM to live data with output it can't hallucinate around. What I care about is the same in every case: <strong>software that real people depend on.</strong></p>
+      </div>
+      <div class="edu-card reveal">
+        <div class="school">York University</div>
+        <div class="deg">Honours BEng, Software Engineering<br>Data Science Specialization</div>
+        <div class="dates">Jan 2023 — Dec 2027 · Toronto, Canada</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">open to opportunities</span>
+      <h2>Let's build something</h2>
+    </div>
+    <p class="lead reveal">I'm entering my final year and looking for teams that ship real software to real users. If that's you, I'd love to talk.</p>
+    <div class="contact-links reveal">
+      <a class="btn btn-primary" href="mailto:ahmad.shraim24@gmail.com">ahmad.shraim24@gmail.com</a>
+      <a class="btn btn-ghost" href="https://linkedin.com/in/Ahmad-Mahmoud" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-ghost" href="https://github.com/AWZShraim" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <span>© 2026 Ahmad Mahmoud</span>
+    <span>built with care · deployed with a canary</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

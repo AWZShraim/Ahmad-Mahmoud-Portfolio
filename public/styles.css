@@ -23,6 +23,23 @@ body{
 }
 ::selection{background:var(--accent);color:#0A0D14}
 
+/* ---------- galaxy backdrop ---------- */
+.galaxy{
+  position:fixed;inset:0;z-index:-2;overflow:hidden;background:
+    radial-gradient(ellipse 900px 600px at 12% 15%, rgba(124,155,255,.14), transparent 60%),
+    radial-gradient(ellipse 800px 700px at 88% 78%, rgba(159,102,255,.12), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 55% 5%, rgba(87,201,143,.07), transparent 62%),
+    var(--bg);
+}
+#stars{position:absolute;inset:0;width:100%;height:100%;display:block}
+@media(prefers-reduced-motion:reduce){
+  .galaxy{background:
+    radial-gradient(ellipse 900px 600px at 12% 15%, rgba(124,155,255,.1), transparent 60%),
+    radial-gradient(ellipse 800px 700px at 88% 78%, rgba(159,102,255,.08), transparent 60%),
+    var(--bg);
+  }
+}
+
 a{color:inherit;text-decoration:none}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
 .mono{font-family:'IBM Plex Mono',monospace}
@@ -105,9 +122,9 @@ h1 em{font-style:normal;color:var(--accent)}
   padding:13px 24px;border-radius:8px;font-size:.9rem;font-weight:600;
   border:1px solid var(--line);transition:all .2s;
 }
-.btn-primary{background:var(--accent);color:#0A0D14;border-color:var(--accent)}
-.btn-primary:hover{background:#93ADFF}
-.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn-primary{background:var(--accent);color:#0A0D14;border-color:var(--accent);box-shadow:0 0 0 0 rgba(124,155,255,.5)}
+.btn-primary:hover{background:#93ADFF;box-shadow:0 0 24px 2px rgba(124,155,255,.45)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);box-shadow:0 0 16px 0 rgba(124,155,255,.25)}
 
 /* ---------- sections ---------- */
 section{padding:92px 0;border-bottom:1px solid var(--line)}
@@ -144,11 +161,22 @@ h2{
 .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 @media(max-width:860px){.projects{grid-template-columns:1fr}}
 .card{
-  background:var(--bg-raised);border:1px solid var(--line);border-radius:var(--radius);
+  position:relative;
+  background:rgba(15,19,29,.55);backdrop-filter:blur(10px);
+  border:1px solid var(--line);border-radius:var(--radius);
   padding:28px 26px;display:flex;flex-direction:column;gap:14px;
-  transition:border-color .25s, transform .25s;
+  transition:border-color .25s, transform .25s, box-shadow .25s;
 }
-.card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 0 28px -6px rgba(124,155,255,.35)}
+.card::before,.card::after,
+.skill-group::before,.skill-group::after,
+.edu-card::before,.edu-card::after{
+  content:"";position:absolute;width:14px;height:14px;
+  border-color:var(--accent);opacity:.35;pointer-events:none;transition:opacity .25s;
+}
+.card::before,.skill-group::before,.edu-card::before{top:-1px;left:-1px;border-top:2px solid;border-left:2px solid}
+.card::after,.skill-group::after,.edu-card::after{bottom:-1px;right:-1px;border-bottom:2px solid;border-right:2px solid}
+.card:hover::before,.card:hover::after{opacity:.9}
 .card .stack{
   font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--accent);
   display:flex;flex-wrap:wrap;gap:8px;
@@ -161,8 +189,13 @@ h2{
 .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
 @media(max-width:700px){.skills{grid-template-columns:1fr}}
 .skill-group{
-  border:1px solid var(--line);border-radius:var(--radius);padding:24px 26px;background:var(--bg-raised);
+  position:relative;
+  border:1px solid var(--line);border-radius:var(--radius);padding:24px 26px;
+  background:rgba(15,19,29,.55);backdrop-filter:blur(10px);
+  transition:border-color .25s, box-shadow .25s;
 }
+.skill-group:hover{border-color:var(--accent);box-shadow:0 0 28px -8px rgba(124,155,255,.3)}
+.skill-group:hover::before,.skill-group:hover::after{opacity:.9}
 .skill-group h3{
   font-family:'IBM Plex Mono',monospace;font-size:.76rem;color:var(--accent);
   text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;
@@ -172,7 +205,7 @@ h2{
   font-size:.8rem;color:var(--muted);border:1px solid var(--line);
   padding:5px 12px;border-radius:6px;transition:all .2s;
 }
-.chip:hover{color:var(--text);border-color:var(--accent)}
+.chip:hover{color:var(--text);border-color:var(--accent);box-shadow:0 0 12px -2px rgba(124,155,255,.4)}
 
 /* ---------- about / education ---------- */
 .about-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:48px}
@@ -180,9 +213,12 @@ h2{
 .about-grid p{color:var(--muted);margin-bottom:16px}
 .about-grid p strong{color:var(--text);font-weight:600}
 .edu-card{
-  border:1px solid var(--line);border-radius:var(--radius);padding:26px;background:var(--bg-raised);
+  position:relative;
+  border:1px solid var(--line);border-radius:var(--radius);padding:26px;
+  background:rgba(15,19,29,.55);backdrop-filter:blur(10px);
   align-self:start;
 }
+.edu-card::before,.edu-card::after{opacity:.55}
 .edu-card .school{font-family:'Archivo',sans-serif;font-weight:700;font-size:1.05rem}
 .edu-card .deg{color:var(--accent);font-size:.9rem;margin:4px 0 10px}
 .edu-card .dates{font-family:'IBM Plex Mono',monospace;font-size:.75rem;color:var(--muted)}

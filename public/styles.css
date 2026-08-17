@@ -73,8 +73,8 @@ nav::after{
   display:flex;align-items:center;justify-content:space-between;
 }
 .logo{
-  font-family:'Archivo',sans-serif;font-weight:800;font-size:1.05rem;
-  letter-spacing:.02em;
+  font-family:'Orbitron',sans-serif;font-weight:700;font-size:.92rem;
+  letter-spacing:.08em;text-transform:uppercase;
 }
 .logo span{color:var(--accent);text-shadow:0 0 16px rgba(124,155,255,.65)}
 .nav-links{display:flex;gap:28px;font-size:.85rem}

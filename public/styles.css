@@ -57,9 +57,16 @@ a{color:inherit;text-decoration:none}
 /* ---------- nav ---------- */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:50;
-  background:rgba(10,13,20,.82);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--line);
+  background:rgba(10,13,20,.38);
+  backdrop-filter:blur(18px) saturate(160%);
+  -webkit-backdrop-filter:blur(18px) saturate(160%);
+  border-bottom:1px solid rgba(124,155,255,.18);
+  box-shadow:0 1px 0 rgba(124,155,255,.12), 0 12px 32px -16px rgba(124,155,255,.45);
+}
+nav::after{
+  content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;
+  background:linear-gradient(90deg, transparent, rgba(124,155,255,.7), rgba(178,102,255,.6), transparent);
+  opacity:.8;
 }
 .nav-inner{
   max-width:var(--maxw);margin:0 auto;padding:16px 24px;
@@ -69,10 +76,16 @@ nav{
   font-family:'Archivo',sans-serif;font-weight:800;font-size:1.05rem;
   letter-spacing:.02em;
 }
-.logo span{color:var(--accent)}
+.logo span{color:var(--accent);text-shadow:0 0 16px rgba(124,155,255,.65)}
 .nav-links{display:flex;gap:28px;font-size:.85rem}
-.nav-links a{color:var(--muted);transition:color .2s}
-.nav-links a:hover{color:var(--text)}
+.nav-links a{color:var(--muted);position:relative;padding-bottom:2px;transition:color .2s,text-shadow .2s}
+.nav-links a::after{
+  content:"";position:absolute;left:0;right:100%;bottom:-4px;height:1px;
+  background:var(--accent);box-shadow:0 0 8px 1px rgba(124,155,255,.8);
+  transition:right .25s ease;
+}
+.nav-links a:hover{color:var(--text);text-shadow:0 0 10px rgba(124,155,255,.55)}
+.nav-links a:hover::after{right:0}
 @media(max-width:640px){.nav-links{display:none}}
 
 /* ---------- hero ---------- */

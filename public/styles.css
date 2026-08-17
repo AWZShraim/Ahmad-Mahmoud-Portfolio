@@ -26,18 +26,28 @@ body{
 /* ---------- galaxy backdrop ---------- */
 .galaxy{
   position:fixed;inset:0;z-index:-2;overflow:hidden;background:
-    radial-gradient(ellipse 900px 600px at 12% 15%, rgba(124,155,255,.14), transparent 60%),
-    radial-gradient(ellipse 800px 700px at 88% 78%, rgba(159,102,255,.12), transparent 60%),
-    radial-gradient(ellipse 700px 500px at 55% 5%, rgba(87,201,143,.07), transparent 62%),
+    radial-gradient(ellipse 1000px 700px at 10% 12%, rgba(124,155,255,.26), transparent 62%),
+    radial-gradient(ellipse 900px 800px at 90% 80%, rgba(178,102,255,.24), transparent 62%),
+    radial-gradient(ellipse 800px 600px at 55% 0%, rgba(87,201,143,.14), transparent 64%),
+    radial-gradient(ellipse 700px 500px at 30% 90%, rgba(245,184,92,.08), transparent 60%),
     var(--bg);
+}
+.galaxy::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(124,155,255,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124,155,255,.05) 1px, transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(ellipse 1200px 800px at 50% 0%, black, transparent 75%);
 }
 #stars{position:absolute;inset:0;width:100%;height:100%;display:block}
 @media(prefers-reduced-motion:reduce){
   .galaxy{background:
-    radial-gradient(ellipse 900px 600px at 12% 15%, rgba(124,155,255,.1), transparent 60%),
-    radial-gradient(ellipse 800px 700px at 88% 78%, rgba(159,102,255,.08), transparent 60%),
+    radial-gradient(ellipse 900px 600px at 12% 15%, rgba(124,155,255,.14), transparent 60%),
+    radial-gradient(ellipse 800px 700px at 88% 78%, rgba(159,102,255,.12), transparent 60%),
     var(--bg);
   }
+  .galaxy::before{display:none}
 }
 
 a{color:inherit;text-decoration:none}
@@ -82,8 +92,8 @@ header::before{
   display:flex;align-items:center;gap:10px;margin-bottom:26px;
 }
 .dot{width:8px;height:8px;border-radius:50%;background:var(--ok);
-  box-shadow:0 0 0 4px rgba(87,201,143,.15);animation:pulse 2.4s ease-in-out infinite}
-@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(87,201,143,.06)}}
+  box-shadow:0 0 0 4px rgba(87,201,143,.15),0 0 12px 1px rgba(87,201,143,.6);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(87,201,143,.08),0 0 18px 3px rgba(87,201,143,.4)}}
 h1{
   font-family:'Archivo',sans-serif;font-weight:900;
   font-size:clamp(2.6rem,7vw,4.6rem);
@@ -91,7 +101,7 @@ h1{
   text-transform:uppercase;
   margin-bottom:28px;max-width:900px;
 }
-h1 em{font-style:normal;color:var(--accent)}
+h1 em{font-style:normal;color:var(--accent);text-shadow:0 0 30px rgba(124,155,255,.5)}
 .hero-sub{color:var(--muted);max-width:640px;font-size:1.08rem;margin-bottom:40px}
 .hero-sub strong{color:var(--text);font-weight:600}
 
@@ -122,9 +132,9 @@ h1 em{font-style:normal;color:var(--accent)}
   padding:13px 24px;border-radius:8px;font-size:.9rem;font-weight:600;
   border:1px solid var(--line);transition:all .2s;
 }
-.btn-primary{background:var(--accent);color:#0A0D14;border-color:var(--accent);box-shadow:0 0 0 0 rgba(124,155,255,.5)}
-.btn-primary:hover{background:#93ADFF;box-shadow:0 0 24px 2px rgba(124,155,255,.45)}
-.btn-ghost:hover{border-color:var(--accent);color:var(--accent);box-shadow:0 0 16px 0 rgba(124,155,255,.25)}
+.btn-primary{background:var(--accent);color:#0A0D14;border-color:var(--accent);box-shadow:0 0 20px 1px rgba(124,155,255,.35)}
+.btn-primary:hover{background:#93ADFF;box-shadow:0 0 36px 4px rgba(124,155,255,.65)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);box-shadow:0 0 24px 1px rgba(124,155,255,.4)}
 
 /* ---------- sections ---------- */
 section{padding:92px 0;border-bottom:1px solid var(--line)}
@@ -132,6 +142,7 @@ section{padding:92px 0;border-bottom:1px solid var(--line)}
 .sec-tag{
   font-family:'IBM Plex Mono',monospace;font-size:.74rem;color:var(--accent);
   background:var(--accent-dim);padding:4px 10px;border-radius:5px;white-space:nowrap;
+  border:1px solid rgba(124,155,255,.3);box-shadow:0 0 14px -3px rgba(124,155,255,.5);
 }
 h2{
   font-family:'Archivo',sans-serif;font-weight:800;text-transform:uppercase;
@@ -162,21 +173,22 @@ h2{
 @media(max-width:860px){.projects{grid-template-columns:1fr}}
 .card{
   position:relative;
-  background:rgba(15,19,29,.55);backdrop-filter:blur(10px);
+  background:rgba(15,19,29,.5);backdrop-filter:blur(10px);
   border:1px solid var(--line);border-radius:var(--radius);
   padding:28px 26px;display:flex;flex-direction:column;gap:14px;
   transition:border-color .25s, transform .25s, box-shadow .25s;
 }
-.card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 0 28px -6px rgba(124,155,255,.35)}
+.card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 0 40px -4px rgba(124,155,255,.55)}
 .card::before,.card::after,
 .skill-group::before,.skill-group::after,
 .edu-card::before,.edu-card::after{
-  content:"";position:absolute;width:14px;height:14px;
-  border-color:var(--accent);opacity:.35;pointer-events:none;transition:opacity .25s;
+  content:"";position:absolute;width:18px;height:18px;
+  border-color:var(--accent);opacity:.6;pointer-events:none;transition:opacity .25s;
+  filter:drop-shadow(0 0 4px rgba(124,155,255,.7));
 }
 .card::before,.skill-group::before,.edu-card::before{top:-1px;left:-1px;border-top:2px solid;border-left:2px solid}
 .card::after,.skill-group::after,.edu-card::after{bottom:-1px;right:-1px;border-bottom:2px solid;border-right:2px solid}
-.card:hover::before,.card:hover::after{opacity:.9}
+.card:hover::before,.card:hover::after{opacity:1}
 .card .stack{
   font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--accent);
   display:flex;flex-wrap:wrap;gap:8px;
@@ -191,11 +203,11 @@ h2{
 .skill-group{
   position:relative;
   border:1px solid var(--line);border-radius:var(--radius);padding:24px 26px;
-  background:rgba(15,19,29,.55);backdrop-filter:blur(10px);
+  background:rgba(15,19,29,.5);backdrop-filter:blur(10px);
   transition:border-color .25s, box-shadow .25s;
 }
-.skill-group:hover{border-color:var(--accent);box-shadow:0 0 28px -8px rgba(124,155,255,.3)}
-.skill-group:hover::before,.skill-group:hover::after{opacity:.9}
+.skill-group:hover{border-color:var(--accent);box-shadow:0 0 40px -6px rgba(124,155,255,.5)}
+.skill-group:hover::before,.skill-group:hover::after{opacity:1}
 .skill-group h3{
   font-family:'IBM Plex Mono',monospace;font-size:.76rem;color:var(--accent);
   text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;
@@ -205,7 +217,7 @@ h2{
   font-size:.8rem;color:var(--muted);border:1px solid var(--line);
   padding:5px 12px;border-radius:6px;transition:all .2s;
 }
-.chip:hover{color:var(--text);border-color:var(--accent);box-shadow:0 0 12px -2px rgba(124,155,255,.4)}
+.chip:hover{color:var(--text);border-color:var(--accent);box-shadow:0 0 18px -1px rgba(124,155,255,.55)}
 
 /* ---------- about / education ---------- */
 .about-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:48px}
@@ -215,10 +227,10 @@ h2{
 .edu-card{
   position:relative;
   border:1px solid var(--line);border-radius:var(--radius);padding:26px;
-  background:rgba(15,19,29,.55);backdrop-filter:blur(10px);
+  background:rgba(15,19,29,.5);backdrop-filter:blur(10px);
   align-self:start;
 }
-.edu-card::before,.edu-card::after{opacity:.55}
+.edu-card::before,.edu-card::after{opacity:.75}
 .edu-card .school{font-family:'Archivo',sans-serif;font-weight:700;font-size:1.05rem}
 .edu-card .deg{color:var(--accent);font-size:.9rem;margin:4px 0 10px}
 .edu-card .dates{font-family:'IBM Plex Mono',monospace;font-size:.75rem;color:var(--muted)}

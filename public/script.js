@@ -44,15 +44,15 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     canvas.width = w * dpr; canvas.height = h * dpr;
     canvas.style.width = w + 'px'; canvas.style.height = h + 'px';
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const count = Math.min(220, Math.round((w * h) / 3800));
+    const count = Math.min(420, Math.round((w * h) / 2200));
     stars = Array.from({length: count}, () => ({
       x: Math.random() * w,
       y: Math.random() * h,
-      r: Math.random() * 1.3 + 0.3,
-      base: Math.random() * 0.4 + 0.35,
+      r: Math.random() * 1.6 + 0.4,
+      base: Math.random() * 0.45 + 0.4,
       phase: Math.random() * Math.PI * 2,
-      speed: Math.random() * 0.6 + 0.2,
-      hue: Math.random() < 0.15 ? '124,155,255' : '255,255,255'
+      speed: Math.random() * 0.8 + 0.25,
+      hue: Math.random() < 0.22 ? '124,155,255' : (Math.random() < 0.1 ? '178,102,255' : '255,255,255')
     }));
   }
 
@@ -76,13 +76,13 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   }
 
   function maybeSpawnComet(){
-    if (Math.random() < 0.004 && comets.length < 2) {
+    if (Math.random() < 0.012 && comets.length < 4) {
       const fromLeft = Math.random() < 0.5;
       comets.push({
         x: fromLeft ? -20 : w + 20,
-        y: Math.random() * h * 0.5,
-        vx: (fromLeft ? 1 : -1) * (4 + Math.random() * 3),
-        vy: 2 + Math.random() * 2,
+        y: Math.random() * h * 0.6,
+        vx: (fromLeft ? 1 : -1) * (5 + Math.random() * 4),
+        vy: 2.5 + Math.random() * 2.5,
         life: 1
       });
     }
@@ -91,7 +91,7 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   function tick(t){
     ctx.clearRect(0, 0, w, h);
     stars.forEach(s => {
-      const a = s.base + Math.sin(t * 0.001 * s.speed + s.phase) * 0.3;
+      const a = s.base + Math.sin(t * 0.001 * s.speed + s.phase) * 0.42;
       ctx.beginPath();
       ctx.fillStyle = `rgba(${s.hue},${Math.max(0, a)})`;
       ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);

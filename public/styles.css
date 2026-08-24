@@ -224,9 +224,8 @@ h2{
   font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--accent);
   display:flex;flex-wrap:wrap;gap:8px;
 }
-.card h3{font-family:'Archivo',sans-serif;font-weight:700;font-size:1.1rem}
-.card h3 a{color:inherit;transition:color .2s,text-shadow .2s}
-.card h3 a:hover{color:var(--accent);text-shadow:0 0 10px rgba(124,155,255,.55)}
+.card h3{font-family:'Archivo',sans-serif;font-weight:700;font-size:1.1rem;transition:color .2s,text-shadow .2s}
+.card:hover h3{color:var(--accent);text-shadow:0 0 10px rgba(124,155,255,.55)}
 .card p{color:var(--muted);font-size:.92rem;flex:1}
 .card .hl{color:var(--amber);font-family:'IBM Plex Mono',monospace;font-size:.78rem}
 

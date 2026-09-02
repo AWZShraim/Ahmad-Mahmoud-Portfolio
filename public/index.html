@@ -69,13 +69,12 @@
       </div>
       <div>
         <h3>TELUS — CIO Product Operations</h3>
-        <div class="role">Software Engineer Co-op</div>
+        <div class="role">Software Engineer</div>
         <ul>
-          <li><strong>Sole developer of ProductOps</strong>, a production web platform (TypeScript, Next.js, React) serving 230+ TELUS team members — designed, built, and deployed end-to-end to Kubernetes (GKE) with automated canary deployments. Still in active production use.</li>
-          <li>Designed a <strong>BigQuery data layer</strong> spanning 12 domains, 48 products, and 4,200+ mapped applications, secured by a four-tier RBAC system with server-side authorization guards.</li>
-          <li>Published a <strong>versioned REST API</strong> (OpenAPI 3, OAuth2) to the enterprise API marketplace for governed cross-team consumption of taxonomy data.</li>
-          <li>Built <strong>executive analytics dashboards used directly by VPs</strong>, a grounded AI assistant (LLM over live BigQuery data with JSON-constrained output), and a usage-analytics pipeline tracking DAU/WAU/MAU.</li>
-          <li>Owned CI/CD and cloud infrastructure (GitHub Actions, Workload Identity Federation, Terraform); <strong>remediated a HIGH-severity security finding</strong> by decommissioning an unauthenticated public service.</li>
+          <li>Standardized CIO Office workflows for <strong>3,000 employees</strong>, driving a transition toward a product-centric operating model, by engineering an enterprise full-stack platform.</li>
+          <li>Achieved resilient, production-grade deployment onto <strong>Kubernetes (GKE)</strong> by building the platform's <strong>Next.js and TypeScript</strong> architecture and automating CI/CD provisioning via <strong>Terraform and GitHub Actions</strong>.</li>
+          <li>Delivered contextual operational advice within the platform by integrating a <strong>Claude-powered RAG recommender</strong>, grounding its responses in an automated ETL data layer spanning 5 distributed enterprise databases.</li>
+          <li>Guided major strategic decisions for <strong>VPs and upper management</strong> by surfacing aggregated telemetry in panoramic executive dashboards, driving the platform's continuous adoption to <strong>230+ active users</strong>.</li>
         </ul>
       </div>
     </article>
@@ -119,24 +118,43 @@
       <span class="sec-tag">selected builds</span>
     </div>
     <div class="projects">
-      <a class="card reveal" href="https://github.com/AWZShraim/project-mentor" target="_blank" rel="noopener">
+      <div class="card reveal">
         <div class="stack"><span>Swift/SwiftUI</span><span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>AWS</span><span>Terraform</span><span>Claude API</span></div>
         <h3>Mentor — AI Fitness &amp; Nutrition Coach</h3>
         <p>Native iOS app (SwiftUI, FastAPI, PostgreSQL) on AWS, provisioned with Terraform — in daily use by me and friends for nutrition and workout tracking.</p>
         <div class="hl">Agentic Claude API coach — human-in-the-loop, fully audited</div>
-      </a>
-      <a class="card reveal" href="https://github.com/AWZShraim/customer-intelligence-platform" target="_blank" rel="noopener">
+        <div class="card-actions">
+          <a class="card-link" href="https://github.com/AWZShraim/project-mentor" target="_blank" rel="noopener">View Code</a>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="stack"><span>Go</span><span>Svelte</span><span>Three.js</span><span>Postgres</span><span>Cloud Run</span><span>Claude API</span></div>
+        <h3>Wisdom Frog — AI Learning Harness</h3>
+        <p>Scopes an LLM to one concept per response and only advances once you've confirmed you get it, tracking topic-by-topic understanding. Built in Go with a Svelte frontend, deployed to Cloud Run over Cloud SQL Postgres.</p>
+        <div class="hl">One concept per response — gated on confirmed understanding</div>
+        <div class="card-actions">
+          <a class="card-link" href="https://github.com/AWZShraim/wisdom-frog" target="_blank" rel="noopener">View Code</a>
+          <a class="card-link card-link--launch" href="https://wisdom-frog-app.web.app/" target="_blank" rel="noopener">Launch ▸</a>
+        </div>
+      </div>
+      <div class="card reveal">
         <div class="stack"><span>Python</span><span>PySpark</span><span>MLlib</span><span>Distributed Systems</span></div>
         <h3>Customer Intelligence Platform</h3>
         <p>Distributed big-data pipeline processing 50,000+ transactions across 10,000+ portfolios for customer analytics at scale.</p>
         <div class="hl">3.2× model accuracy lift — O(n²) → O(n log n)</div>
-      </a>
-      <a class="card reveal" href="https://github.com/AWZShraim/Network-Anomalies" target="_blank" rel="noopener">
+        <div class="card-actions">
+          <a class="card-link" href="https://github.com/AWZShraim/customer-intelligence-platform" target="_blank" rel="noopener">View Code</a>
+        </div>
+      </div>
+      <div class="card reveal">
         <div class="stack"><span>Python</span><span>scikit-learn</span><span>Networking</span><span>Security</span></div>
         <h3>Network Anomaly Detection</h3>
         <p>Real-time ML system capturing and classifying live TCP/IP traffic with Isolation Forest to flag malicious patterns for cybersecurity use.</p>
         <div class="hl">Real-time packet capture + classification</div>
-      </a>
+        <div class="card-actions">
+          <a class="card-link" href="https://github.com/AWZShraim/Network-Anomalies" target="_blank" rel="noopener">View Code</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
